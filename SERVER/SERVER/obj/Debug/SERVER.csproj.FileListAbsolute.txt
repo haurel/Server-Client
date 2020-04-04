@@ -1,0 +1,14 @@
+D:\Facultate\SERVER\SERVER\bin\Debug\SERVER.exe.config
+D:\Facultate\SERVER\SERVER\bin\Debug\SERVER.exe
+D:\Facultate\SERVER\SERVER\bin\Debug\SERVER.pdb
+D:\Facultate\SERVER\SERVER\obj\Debug\SERVER.csprojAssemblyReference.cache
+D:\Facultate\SERVER\SERVER\obj\Debug\SERVER.csproj.CoreCompileInputs.cache
+D:\Facultate\SERVER\SERVER\obj\Debug\SERVER.exe
+D:\Facultate\SERVER\SERVER\obj\Debug\SERVER.pdb
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\bin\Debug\SERVER.exe.config
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\bin\Debug\SERVER.exe
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\bin\Debug\SERVER.pdb
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\obj\Debug\SERVER.csprojAssemblyReference.cache
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\obj\Debug\SERVER.csproj.CoreCompileInputs.cache
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\obj\Debug\SERVER.exe
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\SERVER\SERVER\obj\Debug\SERVER.pdb
