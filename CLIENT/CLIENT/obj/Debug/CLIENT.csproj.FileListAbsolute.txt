@@ -1,0 +1,20 @@
+D:\Facultate\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+D:\Facultate\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+D:\Facultate\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.csprojAssemblyReference.cache
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+D:\Facultate\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.csprojAssemblyReference.cache
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+D:\Facultate\semestrul 2\Modelare_Software\CLIENT-SERVER\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
