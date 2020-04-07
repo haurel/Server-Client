@@ -48,6 +48,7 @@
             this.richTextBoxMessage.Size = new System.Drawing.Size(400, 256);
             this.richTextBoxMessage.TabIndex = 0;
             this.richTextBoxMessage.Text = "";
+            this.richTextBoxMessage.TextChanged += new System.EventHandler(this.richTextBoxMessage_TextChanged);
             // 
             // textBoxConnect
             // 

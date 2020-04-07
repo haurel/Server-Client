@@ -12,5 +12,7 @@ namespace CLIENT
         static public string doneUser = "!";
         static public string doneMessage = "*";
         static public string doneDisconnect = "&";
+        static public string errorConnection = "(";
+        static public string doneErrorConnection = ")";
     }
 }

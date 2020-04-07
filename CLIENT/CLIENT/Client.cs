@@ -35,7 +35,7 @@ namespace CLIENT
                 this.chat.textBoxSend.Enabled = true;
                 SendConnection();
 
-                threadClient = new Thread(() => ListenToServer());
+                threadClient = new Thread(() => Chat());
                 threadClient.Start();
             }
             catch (Exception)
@@ -52,7 +52,7 @@ namespace CLIENT
             nsCliet.Flush();
         }
 
-        public void ListenToServer()
+        public void Chat()
         {
             while (true)
             {
@@ -134,6 +134,23 @@ namespace CLIENT
                             });
                         }
                     }
+                    if(message.StartsWith(Headers.errorConnection))
+                    {
+                        string error = message.Substring(1, message.IndexOf(Headers.doneErrorConnection));
+                        error = error.Replace(Headers.doneErrorConnection, String.Empty);
+
+                        if (this.chat.richTextBoxMessage.InvokeRequired)
+                        {
+                            this.chat.richTextBoxMessage.Invoke((MethodInvoker)delegate
+                            {
+                                this.chat.richTextBoxMessage.AppendText("ERROR" + Environment.NewLine);
+                                this.chat.btnConenct.Enabled = true;
+                                this.chat.textBoxConnect.Enabled = true;
+                                this.chat.textBoxSend.Enabled = false;
+                                this.chat.btnSend.Enabled = false;
+                            });
+                        }
+                    }
                 }
                 catch (Exception)
                 {
@@ -191,6 +208,8 @@ namespace CLIENT
                 this.chat.btnConenct.Enabled = true;
                 this.chat.btnSend.Enabled = false;
                 this.chat.textBoxSend.Enabled = false;
+
+                
             }
         }
 

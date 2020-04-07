@@ -63,5 +63,19 @@ namespace CLIENT
             if (textBoxSend.Text.Length > 0) btnSend.Enabled = true;
             else btnSend.Enabled = false;
         }
+
+        private void richTextBoxMessage_TextChanged(object sender, EventArgs e)
+        {
+            string lastLine;
+            if (richTextBoxMessage.Lines.Any())
+            {
+                lastLine = richTextBoxMessage.Lines[richTextBoxMessage.Lines.Length - 1];
+                if (lastLine == "ERROR")
+                {
+                    client = null;
+                }
+            }
+
+        }
     }
 }
