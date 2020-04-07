@@ -16,6 +16,8 @@ namespace SERVER
         static public string doneUser = "!";
         static public string doneMessage = "*";
         static public string doneDisconnect = "&";
+        static public string errorConnection = "(";
+        static public string doneErrorConnection = ")";
     }
 
     public class ClientHandler
@@ -30,7 +32,7 @@ namespace SERVER
             this.clientSocket = _client;
             this.name = _name;
             this.networkStream = _client.GetStream();
-            Console.WriteLine(this.name + " has connected");
+            Console.WriteLine("S-a conectat: " + this.name);
         }
     }
 
@@ -40,8 +42,8 @@ namespace SERVER
         TcpListener server = null;
         NetworkStream nsServer = null;
         List<ClientHandler> clients;
-
-
+        bool error = false;
+        Thread thread;
         public Server()
         {
             clients = new List<ClientHandler>();
@@ -60,7 +62,7 @@ namespace SERVER
             {
                 TcpClient client = server.AcceptTcpClient();
                 
-                Thread thread = new Thread(() => ServerReceiveMessage(client));
+                thread = new Thread(() => ServerReceiveMessage(client));
                 thread.Start();
             }
         }
@@ -69,8 +71,8 @@ namespace SERVER
         {
             nsServer = client.GetStream();
 
-            
-            while (true)
+            bool y = true;
+            while (y)
             {
                 NetworkStream _ns = client.GetStream();
                 string receive = GetNetworkStreamMessage(_ns);
@@ -79,9 +81,35 @@ namespace SERVER
                 {
                     string name = receive.Substring(1, receive.IndexOf(Headers.doneUser));
                     name = name.Replace(Headers.doneUser, String.Empty);
-                    ClientHandler clientHandler = new ClientHandler(client, name);
-                    clients.Add(clientHandler);
-                    UpdateClientsList(clients);
+
+                    foreach(var v in clients)
+                    {
+                        if (v.name == name)
+                        {
+                            string sendError = Headers.errorConnection +
+                                "Utilizatorul exista" + Headers.doneErrorConnection;
+                            error = true;
+
+
+                            byte[] sendMsg = Encoding.UTF8.GetBytes(sendError);
+
+
+                            _ns.Write(sendMsg, 0, sendMsg.Length);
+                            _ns.Flush();
+
+                            y = false;
+                            client.Close();
+                            nsServer.Close();
+                            thread.Abort();
+                        }
+                        error = false;
+                    }
+                    
+                    if (!error) {
+                        ClientHandler clientHandler = new ClientHandler(client, name);
+                        clients.Add(clientHandler);
+                        UpdateClientsList(clients);
+                    }
                 }
 
 
@@ -92,9 +120,9 @@ namespace SERVER
                     string _from = "";
                     string _to = "";
                     string _names = "";
-                    Console.WriteLine("Line95 - " + receive);
+                    //Console.WriteLine("Line95 - " + receive);
                     receive = receive.Substring(1, receive.Length - 1);
-                    Console.WriteLine("Line97 - " + receive);
+                    //Console.WriteLine("Line97 - " + receive);
                     if (receive.StartsWith(Headers.user))
                     {
                         _names = receive.Substring(1, receive.IndexOf(Headers.doneUser));
@@ -106,15 +134,13 @@ namespace SERVER
 
                         _msg = _msg.Replace(Headers.doneUser, String.Empty);
                         _msg = _msg.Replace(Headers.doneMessage, String.Empty);
-                        Console.WriteLine("From: " + _from + " to " + _to + " message: " + _msg);
+                        Console.WriteLine(_from + " a trimis catre " + _to + " mesajul: " + _msg);
                     }
 
                     foreach (var c in clients)
                     {
                         if (c.name == _to)
                         {
-                            //Console.WriteLine("Mesaj de la " + _from + " catre: " + _to);
-
                             string send = Headers.message + Headers.user + _from + Headers.doneUser +
                                 _msg + Headers.doneMessage;
                             byte[] sendMsg = Encoding.UTF8.GetBytes(send);
